@@ -1,0 +1,16 @@
+{
+  "name": "war",
+  "version": "1.0.0",
+  "description": "",
+  "main": "deck.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
+  }
+}
