@@ -1,8 +1,8 @@
 
-
+//create card variables
 var suits = ['spades', 'hearts', 'clubs', 'diamonds' ];
 var rank = [1,2,3,4,5,6,7,8,9,10,11,12,13];
-
+//create class for deck
 class Deck {
     constructor() {
         this.deck = [];   
@@ -17,7 +17,7 @@ class Deck {
         }
     }
      
-
+//shuffle deck, reassign cards to random indexes
 shuffle() {
     for(let i = this.deck.length-1; i>0; i--) {
         let k = Math.floor(Math.random() * i);
@@ -28,7 +28,7 @@ shuffle() {
     console.log('Deck Shuffled');
 }
 }
-
+//create class player with hand array and score
 class Player {
     constructor(name) {
         this.score =0;
@@ -36,6 +36,7 @@ class Player {
         this.hand =[];
     }
 }
+//create class card with rank and suits
 class Card {
     constructor(rank,suits,name) {
         this.rank = rank;
@@ -43,7 +44,7 @@ class Card {
         this.name = name;
     }
 }
-
+//create class game with placeholders for players and new Deck object
    class Game {
     constructor() {
         this.player1 = new Player('player1');
@@ -53,7 +54,7 @@ class Card {
     }
 
 
-
+//deal new deck with push and pop method
    distributeCards() {
     for (let i = 0; i < 26; i++) {
       this.player1.hand.push(this.deck.deck.pop());
@@ -64,7 +65,7 @@ class Card {
 } 
 
 
-  
+  //play war by evaluating each card in each player's hand
   playWar(){
     for (let i = 0; i <this.player1.hand.length; i++){
      
@@ -81,7 +82,7 @@ class Card {
   }
 }
 
-  
+  //declare winner by evaluating score
     gameOver(){
     if(this.player1.score > this.player2.score){
       console.log(`Game Over - Player1 wins with score of ${this.player1.score}`)
@@ -95,7 +96,7 @@ class Card {
   }
 }
  
-
+//start game and call methods of distribute cards, play war, and call game
 var start = new Game();
 start.distributeCards();
 start.playWar();
